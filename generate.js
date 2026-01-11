@@ -12,10 +12,7 @@ const fs = require('fs');
 
   // Helper to render EJS templates
   const render = async (file, data) => {
-    return ejs.renderFile(
-      path.join(__dirname, 'templates', file),
-      data
-    );
+    return ejs.renderFile(path.join(__dirname, 'templates', file), data);
   };
 
   // ---------- PAGE 1: COVER ----------
@@ -32,79 +29,60 @@ const fs = require('fs');
       name: 'Alex Ly',
       email: 'lyalex@gmail.com',
       phone: '+1 (480) 249-8008',
-      address: '867 Mokulua Dr, Kailua, HI 96734'
-    }
+      address: '867 Mokulua Dr, Kailua, HI 96734',
+    },
   });
 
   // ---------- PAGE 2: WITHOUT COST SEG ----------
-  const page2Html = await render(
-    'page-02-without-cost-seg.ejs',
-    { proposalData }
-  );
+  const page2Html = await render('page-02-without-cost-seg.ejs', { proposalData });
 
   // ---------- PAGE 3: WITH COST SEG ----------
-  const page3Html = await render(
-    'page-03-with-cost-seg.ejs',
-    { proposalData }
-  );
-
+  const page3Html = await render('page-03-with-cost-seg.ejs', { proposalData });
 
   // ---------- PAGE 4: ESTIMATED DEPRECIATION ----------
-  const page4Html = await render(
-    'page-04-estimated-depreciation.ejs',
-    { proposalData }
-  );
+  const page4Html = await render('page-04-estimated-depreciation.ejs', { proposalData });
 
   // ---------- PAGE 5: AUDIT SUPPORT ----------
-  const page5Html = await render(
-    'page-05-audit-support.ejs',
-    { proposalData }
-  );
+  const page5Html = await render('page-05-audit-support.ejs', { proposalData });
 
   // ---------- PAGE 6: PROJECT TIMELINE ----------
-  const page6Html = await render(
-    'page-06-project-timeline.ejs',
-    { proposalData }
-  );
+  const page6Html = await render('page-06-project-timeline.ejs', { proposalData });
 
   // ---------- PAGE 7: ACCEPTANCE ----------
 
   const signaturePath = path.join(__dirname, 'assets/signature.png');
   const signatureBase64 = fs.readFileSync(signaturePath).toString('base64');
-  const page7Html = await render(
-    'page-07-acceptance.ejs',
-    {
-      proposalData,
-      signature: `data:image/png;base64,${signatureBase64}`
-    }
-  );
+  const page7Html = await render('page-07-acceptance.ejs', {
+    proposalData,
+    signature: `data:image/png;base64,${signatureBase64}`,
+  });
 
   // ---------- PAGE 8: TERMS ----------
-  const page8Html = await render(
-    'page-08-terms.ejs',
-    { proposalData }
-  );
+  const page8Html = await render('page-08-terms.ejs', { proposalData });
 
-  // Combine pages (each template is a full page)
-  const finalHtml = `
-    ${coverHtml}
-    <div style="page-break-before: always;"></div>
-    ${page2Html}
-    <div style="page-break-before: always;"></div>
-    ${page3Html}
-    <div style="page-break-before: always;"></div>
-    ${page4Html}
-    <div style="page-break-before: always;"></div>
-    ${page5Html}
-    <div style="page-break-before: always;"></div>
-    ${page6Html}
-    <div style="page-break-before: always;"></div>
-    ${page7Html}
-    <div style="page-break-before: always;"></div>
-    ${page8Html}
-  `;
+  // ---------- Read CSS ----------
+  const cssFiles = ['base.css'];
 
-  await page.setContent(finalHtml, { waitUntil: 'networkidle0' });
+  const styles = cssFiles
+    .map((file) => {
+      const cssPath = path.join(__dirname, 'styles', file);
+      return fs.readFileSync(cssPath, 'utf8');
+    })
+    .join('\n');
+
+  // Render the final wrapper template with CSS and compiled HTML
+  const finalWrapped = await render('final.ejs', {
+    styles,
+    coverHtml,
+    page2Html,
+    page3Html,
+    page4Html,
+    page5Html,
+    page6Html,
+    page7Html,
+    page8Html,
+  });
+  await page.setContent(finalWrapped, { waitUntil: 'networkidle0' });
 
   // Wait for Chart.js to be loaded and all charts to render
   await page.evaluate(() => {
@@ -147,7 +125,7 @@ const fs = require('fs');
       </div>
     `,
     headerTemplate: '<div></div>',
-    margin: { top: '80px', bottom: '80px' }
+    margin: { top: '80px', bottom: '80px' },
   });
 
   await browser.close();

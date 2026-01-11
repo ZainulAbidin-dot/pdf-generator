@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="../styles/base.css" />
-</head>
-
-<body>
-    <div class="page">
-        <!-- HEADER -->
-        <div style="
+<div class="page">
+  <!-- HEADER -->
+  <div style="
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -16,15 +8,15 @@
           font-size: 18px;
           color: #1e3a8a;
         ">
-            <span>🌐 www.costsegregationguys.com</span>
-            <span>Page 06</span>
-        </div>
+    <span>🌐 www.costsegregationguys.com</span>
+    <span>Page 06</span>
+  </div>
 
-        <!-- CONTENT -->
-        <div style="padding: 10px 60px 40px; color: #000;">
+  <!-- CONTENT -->
+  <div style="padding: 10px 60px 40px; color: #000;">
 
-            <!-- Project Timeline Section -->
-            <h2 style="
+    <!-- Project Timeline Section -->
+    <h2 style="
             font-size: 36px;
             color: #0f2e5a;
             margin: 0 0 16px 0;
@@ -32,14 +24,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             ">
-                <%= proposalData.page6.content.timeline.title %>
-            </h2>
-            <p style="font-size: 24px; margin-bottom: 30px; line-height: 1.5; color: #334155;">
-                <%= proposalData.page6.content.timeline.text %>
-            </p>
+      <%= proposalData.page6.content.timeline.title %>
+    </h2>
+    <p style="font-size: 24px; margin-bottom: 30px; line-height: 1.5; color: #334155;">
+      <%= proposalData.page6.content.timeline.text %>
+    </p>
 
-            <!-- Fees Section -->
-            <h2 style="
+    <!-- Fees Section -->
+    <h2 style="
             font-size: 24px;
              color: #0f2e5a;
             margin: 0 0 16px 0;
@@ -47,23 +39,23 @@
              text-transform: uppercase;
              letter-spacing: 0.5px;
             ">
-                <%= proposalData.page6.content.fees.title %>
-            </h2>
-            <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #1e3a8a; font-weight: bold;">
-                The Fee For The Study Is <%= proposalData.page6.content.fees.amount %>
-            </p>
+      <%= proposalData.page6.content.fees.title %>
+    </h2>
+    <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #1e3a8a; font-weight: bold;">
+      The Fee For The Study Is <%= proposalData.page6.content.fees.amount %>
+    </p>
 
-            <!-- Terms Section -->
-            <% proposalData.page6.content.terms.forEach(term=> { %>
-                <p style="font-size: 24px; margin-bottom: 12px; line-height: 1.4; color: #334155;">
-                    <%= term %>
-                </p>
-                <% }) %>
+    <!-- Terms Section -->
+    <% proposalData.page6.content.terms.forEach(term=> { %>
+    <p style="font-size: 24px; margin-bottom: 12px; line-height: 1.4; color: #334155;">
+      <%= term %>
+    </p>
+    <% }) %>
 
-        </div>
+  </div>
 
-        <!-- ANGLED SHAPES -->
-        <div style="
+  <!-- ANGLED SHAPES -->
+  <div style="
             position: absolute;
             width: 80px;
             height: 280px;
@@ -73,7 +65,7 @@
             bottom: 100px;
             z-index: -1;
         "></div>
-        <div style="
+  <div style="
             position: absolute;
             width: 80px;
             height: 280px;
@@ -83,7 +75,4 @@
             bottom: 40px;
             z-index: -2;
         "></div>
-    </div>
-</body>
-
-</html>
+</div>

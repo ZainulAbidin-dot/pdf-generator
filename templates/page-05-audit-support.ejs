@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="../styles/base.css" />
-</head>
-
-<body>
-    <div class="page">
-        <!-- HEADER -->
-        <div style="
+<div class="page">
+  <!-- HEADER -->
+  <div style="
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -16,15 +8,15 @@
           font-size: 18px;
           color: #1e3a8a;
         ">
-            <span>🌐 www.costsegregationguys.com</span>
-            <span>Page 05</span>
-        </div>
+    <span>🌐 www.costsegregationguys.com</span>
+    <span>Page 05</span>
+  </div>
 
-        <!-- CONTENT -->
-        <div style="padding: 10px 60px 40px; color: #000;">
+  <!-- CONTENT -->
+  <div style="padding: 10px 60px 40px; color: #000;">
 
-            <!-- Audit Support Section -->
-            <h2 style="
+    <!-- Audit Support Section -->
+    <h2 style="
             font-size: 36px;
             color: #0f2e5a;
             margin: 0 0 16px 0;
@@ -32,21 +24,21 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             ">
-                <%= proposalData.page5.content.auditSupport.title %>
-            </h2>
+      <%= proposalData.page5.content.auditSupport.title %>
+    </h2>
 
-            <% proposalData.page5.content.auditSupport.paragraphs.forEach(para=> { %>
-                <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #334155;">
-                    <%= para %>
-                </p>
-                <% }) %>
+    <% proposalData.page5.content.auditSupport.paragraphs.forEach(para=> { %>
+    <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #334155;">
+      <%= para %>
+    </p>
+    <% }) %>
 
-                    <!-- Separator -->
-                    <!-- <div style="height: 1px; background-color: #e2e8f0; margin: 30px 0;"></div> -->
-                    <div style="margin-bottom: 40px;"></div>
+    <!-- Separator -->
+    <!-- <div style="height: 1px; background-color: #e2e8f0; margin: 30px 0;"></div> -->
+    <div style="margin-bottom: 40px;"></div>
 
-                    <!-- Scope of Work Section -->
-                    <h2 style="
+    <!-- Scope of Work Section -->
+    <h2 style="
             font-size: 20px;
              color: #0f2e5a;
             margin: 0 0 16px 0;
@@ -54,13 +46,13 @@
              text-transform: uppercase;
              letter-spacing: 0.5px;
             ">
-                        <%= proposalData.page5.content.scopeOfWork.title %>
-                    </h2>
+      <%= proposalData.page5.content.scopeOfWork.title %>
+    </h2>
 
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                        <% proposalData.page5.content.scopeOfWork.items.forEach(item=> { %>
-                            <div style="display: flex; align-items: flex-start; gap: 12px;">
-                                <div style="
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <% proposalData.page5.content.scopeOfWork.items.forEach(item=> { %>
+      <div style="display: flex; align-items: flex-start; gap: 12px;">
+        <div style="
                         background-color: #1e3a8a;
                         color: white;
                         font-weight: bold;
@@ -74,25 +66,24 @@
                         flex-shrink: 0;
                         margin-top: 2px;
                     ">
-                                    <%= item.id %>
-                                </div>
-                                <div>
-                                    <div
-                                        style="font-weight: bold; font-size: 24px; color: #1e3a8a; margin-bottom: 4px;">
-                                        <%= item.title %>
-                                    </div>
-                                    <div style="font-size: 24px; line-height: 1.4; color: #334155;">
-                                        <%= item.description %>
-                                    </div>
-                                </div>
-                            </div>
-                            <% }) %>
-                    </div>
-
+          <%= item.id %>
         </div>
+        <div>
+          <div style="font-weight: bold; font-size: 24px; color: #1e3a8a; margin-bottom: 4px;">
+            <%= item.title %>
+          </div>
+          <div style="font-size: 24px; line-height: 1.4; color: #334155;">
+            <%= item.description %>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
 
-        <!-- ANGLED SHAPES -->
-        <div style="
+  </div>
+
+  <!-- ANGLED SHAPES -->
+  <div style="
             position: absolute;
             width: 80px;
             height: 280px;
@@ -102,7 +93,7 @@
             bottom: 100px;
             z-index: -1;
         "></div>
-        <div style="
+  <div style="
             position: absolute;
             width: 80px;
             height: 280px;
@@ -112,7 +103,4 @@
             bottom: 40px;
             z-index: -2;
         "></div>
-    </div>
-</body>
-
-</html>
+</div>

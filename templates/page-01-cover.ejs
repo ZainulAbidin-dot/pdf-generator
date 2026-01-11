@@ -1,46 +1,38 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <link rel="stylesheet" href="../styles/base.css" />
-</head>
-
-<body>
-  <div class="page">
-    <!-- TOP CONTACT BAR -->
-    <div style="
+<div class="page">
+  <!-- TOP CONTACT BAR -->
+  <div style="
           display: flex;
           justify-content: space-between;
           padding: 16px 50px;
           font-size: 18px;
           color: #1e3a8a;
         ">
-      <span>📞 +1 (406) 626-7978</span>
-      <span>✉ hey@costsegregationguys.com</span>
-    </div>
+    <span>📞 +1 (406) 626-7978</span>
+    <span>✉ hey@costsegregationguys.com</span>
+  </div>
 
-    <!-- LOGO -->
-    <div style="text-align: center; margin-top: 10px">
-      <img src="<%= logo %>" style="width: 380px" />
-    </div>
+  <!-- LOGO -->
+  <div style="text-align: center; margin-top: 10px">
+    <img src="<%= logo %>" style="width: 380px" />
+  </div>
 
-    <!-- TITLE -->
-    <div style="padding: 60px 70px 20px">
-      <h1 style="font-size: 56px; line-height: 1.1; color: #0f2e5a; margin: 0">
-        Depreciation<br />Analysis
-      </h1>
-    </div>
+  <!-- TITLE -->
+  <div style="padding: 60px 70px 20px">
+    <h1 style="font-size: 56px; line-height: 1.1; color: #0f2e5a; margin: 0">
+      Depreciation<br />Analysis
+    </h1>
+  </div>
 
-    <!-- PREPARED FOR -->
-    <div style="padding: 20px 70px">
-      <div style="
+  <!-- PREPARED FOR -->
+  <div style="padding: 20px 70px">
+    <div style="
         background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
         border-left: 5px solid #0f2e5a;
         border-radius: 8px;
         padding: 24px 28px;
         box-shadow: 0 2px 8px rgba(15, 46, 90, 0.08);
       ">
-        <div style="
+      <div style="
           font-size: 16px;
           font-weight: 700;
           color: #0f2e5a;
@@ -48,44 +40,44 @@
           letter-spacing: 0.5px;
           text-transform: uppercase;
         ">
-          Prepared For
+        Prepared For
+      </div>
+      <div style="display: grid; gap: 10px; font-size: 14px; line-height: 1.6;">
+        <div style="display: flex;">
+          <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Name:</span>
+          <span style="color: #334155;">
+            <%= client.name %>
+          </span>
         </div>
-        <div style="display: grid; gap: 10px; font-size: 14px; line-height: 1.6;">
-          <div style="display: flex;">
-            <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Name:</span>
-            <span style="color: #334155;">
-              <%= client.name %>
-            </span>
-          </div>
-          <div style="display: flex;">
-            <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Email:</span>
-            <span style="color: #334155;">
-              <%= client.email %>
-            </span>
-          </div>
-          <div style="display: flex;">
-            <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Phone:</span>
-            <span style="color: #334155;">
-              <%= client.phone %>
-            </span>
-          </div>
-          <div style="display: flex;">
-            <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Property Address:</span>
-            <span style="color: #334155;">
-              <%= client.address %>
-            </span>
-          </div>
+        <div style="display: flex;">
+          <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Email:</span>
+          <span style="color: #334155;">
+            <%= client.email %>
+          </span>
+        </div>
+        <div style="display: flex;">
+          <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Phone:</span>
+          <span style="color: #334155;">
+            <%= client.phone %>
+          </span>
+        </div>
+        <div style="display: flex;">
+          <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Property Address:</span>
+          <span style="color: #334155;">
+            <%= client.address %>
+          </span>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- BUILDING IMAGE -->
-    <div style="padding: 40px 70px">
-      <img src="<%= building %>" style="width: 75%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);" />
-    </div>
+  <!-- BUILDING IMAGE -->
+  <div style="padding: 40px 70px">
+    <img src="<%= building %>" style="width: 75%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);" />
+  </div>
 
-    <!-- ANGLED SHAPES -->
-    <div style="
+  <!-- ANGLED SHAPES -->
+  <div style="
             position: absolute;
             width: 80px;
             height: 280px;
@@ -95,7 +87,7 @@
             bottom: 100px;
             z-index: -1;
         "></div>
-    <div style="
+  <div style="
             position: absolute;
             width: 80px;
             height: 280px;
@@ -105,7 +97,4 @@
             bottom: 40px;
             z-index: -2;
         "></div>
-  </div>
-</body>
-
-</html>
+</div>

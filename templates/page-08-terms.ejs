@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="../styles/base.css" />
-</head>
-
-<body>
-    <div class="page">
-        <!-- HEADER -->
-        <div style="
+<div class="page">
+  <!-- HEADER -->
+  <div style="
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -16,14 +8,14 @@
           font-size: 18px;
           color: #1e3a8a;
         ">
-            <span>🌐 www.costsegregationguys.com</span>
-            <span>Page 08</span>
-        </div>
+    <span>🌐 www.costsegregationguys.com</span>
+    <span>Page 08</span>
+  </div>
 
-        <!-- CONTENT -->
-        <div style="padding: 10px 60px 40px; color: #000;">
+  <!-- CONTENT -->
+  <div style="padding: 10px 60px 40px; color: #000;">
 
-            <h2 style="
+    <h2 style="
             font-size: 36px;
              color: #0f2e5a;
             margin: 0 0 16px 0;
@@ -31,19 +23,19 @@
              text-transform: uppercase;
              letter-spacing: 0.5px;
             ">
-                <%= proposalData.page8.content.title %>
-            </h2>
+      <%= proposalData.page8.content.title %>
+    </h2>
 
-            <% proposalData.page8.content.terms.forEach(term=> { %>
-                <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #334155;">
-                    <%= term %>
-                </p>
-                <% }) %>
+    <% proposalData.page8.content.terms.forEach(term=> { %>
+    <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #334155;">
+      <%= term %>
+    </p>
+    <% }) %>
 
-        </div>
+  </div>
 
-        <!-- ANGLED SHAPES -->
-        <div style="
+  <!-- ANGLED SHAPES -->
+  <div style="
             position: absolute;
             width: 80px;
             height: 280px;
@@ -53,7 +45,7 @@
             bottom: 100px;
             z-index: -1;
         "></div>
-        <div style="
+  <div style="
             position: absolute;
             width: 80px;
             height: 280px;
@@ -63,7 +55,4 @@
             bottom: 40px;
             z-index: -2;
         "></div>
-    </div>
-</body>
-
-</html>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Consistent Chart.js versions for templates -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+  <style>
+    <%=styles %>
+  </style>
+  <title>Proposal</title>
+  <!-- Optional: global print color adjust fallback -->
+  <style>
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  </style>
+
+</head>
+
+<body>
+  <%- coverHtml %>
+  <div style="page-break-before: always;"></div>
+  <%- page2Html %>
+  <div style="page-break-before: always;"></div>
+  <%- page3Html %>
+  <div style="page-break-before: always;"></div>
+  <%- page4Html %>
+  <div style="page-break-before: always;"></div>
+  <%- page5Html %>
+  <div style="page-break-before: always;"></div>
+  <%- page6Html %>
+  <div style="page-break-before: always;"></div>
+  <%- page7Html %>
+  <div style="page-break-before: always;"></div>
+  <%- page8Html %>
+</body>
+
+</html>
