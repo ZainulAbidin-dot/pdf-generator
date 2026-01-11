@@ -1,0 +1,33 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: #1f2937;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.blue-accent {
+  position: absolute;
+  right: -120px;
+  bottom: -80px;
+  width: 420px;
+  height: 420px;
+  background: #1e4ed8;
+  transform: rotate(45deg);
+}
+
+.blue-accent.dark {
+  background: #0f2e5a;
+  right: -220px;
+  bottom: -140px;
+}

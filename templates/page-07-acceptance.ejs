@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../styles/base.css" />
+</head>
+
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <div style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 60px;
+          font-size: 18px;
+          color: #1e3a8a;
+        ">
+            <span>🌐 www.costsegregationguys.com</span>
+            <span>Page 07</span>
+        </div>
+
+        <!-- CONTENT -->
+        <div style="padding: 10px 60px 40px; color: #000;">
+
+            <!-- Termination Section -->
+            <% proposalData.page7.content.termination.forEach(para=> { %>
+                <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #334155;">
+                    <%= para %>
+                </p>
+                <% }) %>
+
+                    <!-- Closing Section -->
+                    <% proposalData.page7.content.closing.forEach(para=> { %>
+                        <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #334155;">
+                            <%= para %>
+                        </p>
+                        <% }) %>
+
+
+                            <!-- Sender Signature Section -->
+                            <div style="margin-top: 40px; margin-bottom: 40px;">
+                                <img src="<%= signature %>"
+                                    style="height: 60px; display: block; margin-bottom: 10px;" />
+                                <div style="font-weight: bold; color: #0f2e5a; font-size: 24px;">
+                                    <%= proposalData.page7.content.sender.name %>
+                                </div>
+                                <div style="font-size: 24px; color: #334155;">
+                                    <%= proposalData.page7.content.sender.title %>
+                                </div>
+                                <div style="font-size: 24px; color: #0f2e5a;">
+                                    <%= proposalData.page7.content.sender.company %>
+                                </div>
+                            </div>
+
+                            <!-- Acceptance Section -->
+                            <h2 style="
+            font-size: 36px;
+             color: #0f2e5a;
+            margin: 0 0 16px 0;
+            line-height: 1.25;
+             text-transform: uppercase;
+             letter-spacing: 0.5px;
+            ">
+                                <%= proposalData.page7.content.acceptance.title %>
+                            </h2>
+                            <p style="font-size: 24px; margin-bottom: 24px; line-height: 1.5; color: #334155;">
+                                <%= proposalData.page7.content.acceptance.text %>
+                            </p>
+
+                            <div style="display: flex; flex-direction: column; gap: 12px; max-width: 400px;">
+                                <% proposalData.page7.content.acceptance.fields.forEach(field=> { %>
+                                    <div style="display: flex; align-items: baseline; gap: 10px;">
+                                        <span style="font-weight: bold; color: #0f2e5a; font-size: 18px; width: 50px;">
+                                            <%= field.label %>
+                                        </span>
+                                        <span
+                                            style="border-bottom: 1px solid #334155; flex-grow: 1; min-height: 20px;"></span>
+                                        <!-- Using a span with border-bottom instead of underlines text for cleaner look -->
+                                    </div>
+                                    <% }) %>
+                            </div>
+
+        </div>
+
+        <!-- ANGLED SHAPES -->
+        <div style="
+            position: absolute;
+            width: 80px;
+            height: 280px;
+            background: #0f2e5a;
+            transform: rotate(45deg);
+            right: -70px;
+            bottom: 100px;
+            z-index: -1;
+        "></div>
+        <div style="
+            position: absolute;
+            width: 80px;
+            height: 280px;
+            background: #1e4ed8;
+            transform: rotate(45deg);
+            right: -80px;
+            bottom: 40px;
+            z-index: -2;
+        "></div>
+    </div>
+</body>
+
+</html>

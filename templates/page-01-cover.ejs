@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../styles/base.css" />
+</head>
+
+<body>
+  <div class="page">
+    <!-- TOP CONTACT BAR -->
+    <div style="
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 50px;
+          font-size: 18px;
+          color: #1e3a8a;
+        ">
+      <span>📞 +1 (406) 626-7978</span>
+      <span>✉ hey@costsegregationguys.com</span>
+    </div>
+
+    <!-- LOGO -->
+    <div style="text-align: center; margin-top: 10px">
+      <img src="<%= logo %>" style="width: 380px" />
+    </div>
+
+    <!-- TITLE -->
+    <div style="padding: 60px 70px 20px">
+      <h1 style="font-size: 56px; line-height: 1.1; color: #0f2e5a; margin: 0">
+        Depreciation<br />Analysis
+      </h1>
+    </div>
+
+    <!-- PREPARED FOR -->
+    <div style="padding: 10px 70px; font-size: 14px">
+      <strong>Prepared For:</strong><br />
+      Name: <%= client.name %><br />
+        Email: <%= client.email %><br />
+          Phone: <%= client.phone %><br />
+            Property Address: <%= client.address %>
+    </div>
+
+    <!-- BUILDING IMAGE -->
+    <div style="padding: 40px 70px">
+      <img src="<%= building %>" style="width: 75%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);" />
+    </div>
+
+    <!-- ANGLED SHAPES -->
+    <div class="blue-accent dark"></div>
+    <div class="blue-accent"></div>
+  </div>
+</body>
+
+</html>

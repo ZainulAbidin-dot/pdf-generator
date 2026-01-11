@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../styles/base.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+</head>
+
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <div style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 60px;
+          font-size: 18px;
+          color: #1e3a8a;
+        ">
+      <span>🌐 www.costsegregationguys.com</span>
+      <span>Page 02</span>
+    </div>
+
+    <!-- CONTENT -->
+    <div style="padding: 10px 60px 40px; color: #000;">
+
+      <h2 style="
+            font-size: 36px;
+             color: #0f2e5a;
+            margin: 0 0 16px 0;
+            line-height: 1.25;
+             text-transform: uppercase;
+             letter-spacing: 0.5px;
+            ">
+        <%= proposalData.page2.content.title %>
+      </h2>
+
+      <% proposalData.page2.content.intro.forEach(para=> { %>
+        <p style="font-size: 24px; margin-bottom: 20px; line-height: 1.5; color: #334155;">
+          <%= para %>
+        </p>
+        <% }) %>
+
+          <p style="font-size: 24px; margin-bottom: 30px; line-height: 1.5; color: #334155;">
+            <%= proposalData.page2.content.example %>
+          </p>
+
+          <h2 style="
+            font-size: 36px;
+             color: #0f2e5a;
+            margin: 0 0 16px 0;
+            line-height: 1.25;
+            ">
+            <%- proposalData.page2.content.breakdownTitle.replace(/\n/g, '<br/>' ) %>
+          </h2>
+
+          <!-- Simple Breakdown Display -->
+          <div style="margin-top: 20px;">
+            <% proposalData.page2.content.breakdown.forEach(item=> { %>
+              <div
+                style="display: flex; justify-content: space-between; max-width: 500px; margin-bottom: 10px; font-size: 24px; color: #334155;">
+                <span>
+                  <%= item.label %>
+                </span>
+                <span style="font-weight: bold; color: #0f2e5a;">
+                  <%= item.value %>
+                </span>
+              </div>
+              <% }) %>
+          </div>
+
+          <div style="
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 10px;
+          ">
+            <canvas id="costSegChart" width="360" height="360"></canvas>
+          </div>
+
+    </div>
+
+    <!-- ANGLED SHAPES -->
+    <div style="
+            position: absolute;
+            width: 80px;
+            height: 280px;
+            background: #0f2e5a;
+            transform: rotate(45deg);
+            right: -70px;
+            bottom: 100px;
+            z-index: -1;
+        "></div>
+    <div style="
+            position: absolute;
+            width: 80px;
+            height: 280px;
+            background: #1e4ed8;
+            transform: rotate(45deg);
+            right: -80px;
+            bottom: 40px;
+            z-index: -2;
+        "></div>
+  </div>
+
+
+  <script>
+    // Register the plugin
+    Chart.register(ChartDataLabels);
+
+    const chartData = <%- JSON.stringify(proposalData.page2.content.breakdown) %>;
+
+    new Chart(document.getElementById("costSegChart"), {
+      type: "pie",
+      data: {
+        labels: chartData.map(item => item.label),
+        datasets: [
+          {
+            data: chartData.map(item => item.rawValue),
+            backgroundColor: chartData.map(item => item.color),
+          },
+        ],
+      },
+      options: {
+        responsive: false,
+        plugins: {
+          legend: { display: false },
+          datalabels: {
+            color: '#fff',
+            font: {
+              weight: 'bold',
+              size: 11
+            },
+            formatter: (value, ctx) => {
+              return '$' + value.toLocaleString();
+            },
+            align: 'center',
+            anchor: 'center'
+          }
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>
