@@ -109,16 +109,16 @@
     // Register the plugin
     Chart.register(ChartDataLabels);
 
-    const chartData = <%- JSON.stringify(proposalData.page2.content.breakdown) %>;
+    const chartDataPage2 = <%- JSON.stringify(proposalData.page2.content.breakdown) %>;
 
     new Chart(document.getElementById("page2Chart"), {
       type: "pie",
       data: {
-        labels: chartData.map(item => item.label),
+        labels: chartDataPage2.map(item => item.label),
         datasets: [
           {
-            data: chartData.map(item => item.rawValue),
-            backgroundColor: chartData.map(item => item.color),
+            data: chartDataPage2.map(item => item.rawValue),
+            backgroundColor: chartDataPage2.map(item => item.color),
           },
         ],
       },

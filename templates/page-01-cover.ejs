@@ -32,12 +32,51 @@
     </div>
 
     <!-- PREPARED FOR -->
-    <div style="padding: 10px 70px; font-size: 14px">
-      <strong>Prepared For:</strong><br />
-      Name: <%= client.name %><br />
-        Email: <%= client.email %><br />
-          Phone: <%= client.phone %><br />
-            Property Address: <%= client.address %>
+    <div style="padding: 20px 70px">
+      <div style="
+        background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+        border-left: 5px solid #0f2e5a;
+        border-radius: 8px;
+        padding: 24px 28px;
+        box-shadow: 0 2px 8px rgba(15, 46, 90, 0.08);
+      ">
+        <div style="
+          font-size: 16px;
+          font-weight: 700;
+          color: #0f2e5a;
+          margin-bottom: 16px;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+        ">
+          Prepared For
+        </div>
+        <div style="display: grid; gap: 10px; font-size: 14px; line-height: 1.6;">
+          <div style="display: flex;">
+            <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Name:</span>
+            <span style="color: #334155;">
+              <%= client.name %>
+            </span>
+          </div>
+          <div style="display: flex;">
+            <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Email:</span>
+            <span style="color: #334155;">
+              <%= client.email %>
+            </span>
+          </div>
+          <div style="display: flex;">
+            <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Phone:</span>
+            <span style="color: #334155;">
+              <%= client.phone %>
+            </span>
+          </div>
+          <div style="display: flex;">
+            <span style="font-weight: 600; color: #1e3a8a; min-width: 140px;">Property Address:</span>
+            <span style="color: #334155;">
+              <%= client.address %>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- BUILDING IMAGE -->
@@ -47,25 +86,25 @@
 
     <!-- ANGLED SHAPES -->
     <div style="
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      background: #0a1e3d;
-      transform: rotate(45deg);
-      right: -220px;
-      bottom: -140px;
-      z-index: -1;
-    "></div>
+            position: absolute;
+            width: 80px;
+            height: 280px;
+            background: #0f2e5a;
+            transform: rotate(45deg);
+            right: -70px;
+            bottom: 100px;
+            z-index: -1;
+        "></div>
     <div style="
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      background: #1e4ed8;
-      transform: rotate(45deg);
-      right: -120px;
-      bottom: -80px;
-      z-index: -2;
-    "></div>
+            position: absolute;
+            width: 80px;
+            height: 280px;
+            background: #1e4ed8;
+            transform: rotate(45deg);
+            right: -80px;
+            bottom: 40px;
+            z-index: -2;
+        "></div>
   </div>
 </body>
 
