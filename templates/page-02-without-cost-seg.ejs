@@ -76,7 +76,7 @@
             align-items: flex-start;
             padding-top: 10px;
           ">
-            <canvas id="costSegChart" width="360" height="360"></canvas>
+            <canvas id="page2Chart" width="360" height="360"></canvas>
           </div>
 
     </div>
@@ -111,7 +111,7 @@
 
     const chartData = <%- JSON.stringify(proposalData.page2.content.breakdown) %>;
 
-    new Chart(document.getElementById("costSegChart"), {
+    new Chart(document.getElementById("page2Chart"), {
       type: "pie",
       data: {
         labels: chartData.map(item => item.label),

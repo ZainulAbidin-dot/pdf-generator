@@ -106,8 +106,25 @@ const fs = require('fs');
 
   await page.setContent(finalHtml, { waitUntil: 'networkidle0' });
 
-  // Wait for charts/fonts/images to fully render
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  // Wait for Chart.js to be loaded and all charts to render
+  await page.evaluate(() => {
+    return new Promise((resolve) => {
+      // Wait for Chart.js to be available
+      const checkCharts = setInterval(() => {
+        if (typeof Chart !== 'undefined') {
+          clearInterval(checkCharts);
+          // Give charts additional time to fully render
+          setTimeout(resolve, 1500);
+        }
+      }, 100);
+
+      // Timeout after 5 seconds
+      setTimeout(() => {
+        clearInterval(checkCharts);
+        resolve();
+      }, 5000);
+    });
+  });
 
   await page.pdf({
     path: 'output/proposal.pdf',
